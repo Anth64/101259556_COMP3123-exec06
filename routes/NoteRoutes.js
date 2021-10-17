@@ -62,9 +62,8 @@ router.delete('/notes/:noteId', async (req, res) => {
   //TODO - Write your code here to delete the note using noteid
 	try{
 		let note = await noteModel.findByIdAndDelete(req.params.noteId)
-		if(!note){
-			res.status(200).send();
-		}
+		res.status(200).send();
+	
 	}
 	catch(err){
 		res.status(500).send(err);
